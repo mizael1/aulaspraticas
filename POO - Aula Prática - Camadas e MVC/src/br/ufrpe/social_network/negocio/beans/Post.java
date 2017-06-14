@@ -3,14 +3,16 @@ package br.ufrpe.social_network.negocio.beans;
 import java.util.ArrayList;
 
 public class Post {
-    
+	private static long nextId = 1;
     private long id;
     private String texto;
     private Person author;
     private ArrayList<Post> comments;
 
     public Post(String texto, Person author) {
-        // TODO Implementar a mesma estratégia da classe Person para geração de ID  
+    	
+        this.id = nextId;
+        nextId++;  
         
         this.texto = texto;
         this.author = author;

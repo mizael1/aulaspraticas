@@ -5,10 +5,21 @@ import br.ufrpe.social_network.dao.PostDAO;
 public class PostController {
     
     private PostDAO postsRepository;
-    
+    private static PostController instance;
     // TODO implementar corpo dos métodos CRUD deste controlador
 
-    // TODO Implementar singleton para este controlador
+    
+	
+	private PostController() {
+        // Construtor privado para implementação de singleton
+    }
+
+    public static PostController getInstance() {
+        if (instance == null) {
+            instance = new PostController();
+        }
+        return instance;
+    }
     
     // TODO Implementar método que lista todos os posts de uma determinada pessoa
     
